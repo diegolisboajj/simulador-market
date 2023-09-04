@@ -1,5 +1,3 @@
-# simulador de caixa de mercado
-
 # Simulação de caixa de supermercado em Java
 ## Aprenda sobre processamento simultâneo, filas, threads e GUI Swing
 
