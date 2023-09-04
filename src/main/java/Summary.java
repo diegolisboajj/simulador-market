@@ -6,9 +6,9 @@ import java.text.NumberFormat;
 public class Summary extends JPanel {
     private double total = 0;
     private int numClients = 0;
-    private final String AVERAGE = "Average by client: ";
+    private final String AVERAGE = "Media por cliente: ";
     private final String TOTAL = "Total: ";
-    private final String CLIENTS = "Number of clients: ";
+    private final String CLIENTS = "Numero de clientes: ";
     private JLabel jLabelTotal, jLabelAverage, jLabelNumClients;
     private NumberFormat defaultFormat;
 

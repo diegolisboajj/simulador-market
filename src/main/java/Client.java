@@ -18,11 +18,11 @@ public class Client extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(new EmptyBorder(5, 5, 5, 5));
 
-        JLabel clientNumber = new JLabel("Client " + number);
+        JLabel clientNumber = new JLabel("Cliente " + number);
         clientNumber.setForeground(Color.YELLOW);
         add(clientNumber);
 
-        JLabel numberOfItems = new JLabel("items: " + products.size());
+        JLabel numberOfItems = new JLabel("Produtos: " + products.size());
         numberOfItems.setForeground(Color.white);
         add(numberOfItems);
     }

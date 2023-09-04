@@ -7,6 +7,6 @@ public class Main {
         ClientQueue queue = new ClientQueue();
         new Thread(queue).start();
 
-        new Thread(new MarketGUI("Supermarket", 4, queue)).start();
+        new Thread(new MarketGUI("Supermercado", 4, queue)).start();
     }
 }

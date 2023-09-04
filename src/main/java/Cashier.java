@@ -14,8 +14,8 @@ public class Cashier extends JPanel implements Runnable {
     private final JLabel jLabelClient;
     private final JLabel jLableNumItem;
     private final NumberFormat defaultFormat;
-    private final String NO_CLIENT = "Client ?";
-    private final String NO_ITEM = "Item: 0";
+    private final String NO_CLIENT = "Cliente ?";
+    private final String NO_ITEM = "Produtos: 0";
 
     public Cashier(int number, ClientQueue queue, Summary summary) {
         this.queue = queue;
@@ -26,7 +26,7 @@ public class Cashier extends JPanel implements Runnable {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        JLabel deskNumber = new JLabel("Cashier " + number);
+        JLabel deskNumber = new JLabel("Caixa " + number);
         deskNumber.setForeground(Color.YELLOW);
         add(deskNumber);
 
@@ -50,7 +50,6 @@ public class Cashier extends JPanel implements Runnable {
             while (true) {
                 if (client == null) {
                     client = queue.callClient();
-                    // Wait client arrives
                     Thread.sleep(5000);
                     process();
                 }
@@ -64,13 +63,13 @@ public class Cashier extends JPanel implements Runnable {
     private void process() throws InterruptedException {
         int countItem = 0;
         double buy = 0;
-        jLabelClient.setText("Client " + client.getNumber());
+        jLabelClient.setText("Cliente " + client.getNumber());
         for (Iterator<Double> it = client.getProducts(); it.hasNext();) {
             double item = it.next();
             buy = money += item;
             countItem++;
             jLabelMoney.setText(defaultFormat.format(money));
-            jLableNumItem.setText("Item: " + countItem);
+            jLableNumItem.setText("Produto: " + countItem);
             Thread.sleep(1000);
         }
         summary.setOperation(buy);
